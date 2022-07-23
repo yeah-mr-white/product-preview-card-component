@@ -25,6 +25,7 @@
       --header-font-style: 'Fraunces', serif;
       --header-text-color: hsl(212, 21%, 14%);
       --btn-color: hsl(158, 36%, 37%);
+      --btn-hover-color: hsl(158, 39%, 17%);
       --white-color: hsl(0, 0%, 100%);
     }
 
@@ -40,7 +41,11 @@
       background-color: var(--white-colora);
     }
 
-    img {
+    .image {
+      background-image: url("images/image-product-desktop.jpg");
+      background-size: 340px;
+      width: 310px;
+      height: 500px;
       border-top-left-radius: 15px;
       border-bottom-left-radius: 15px;
     }
@@ -49,6 +54,7 @@
       width: 310px;
       height: 500px;
       background-color: var(--white-color);
+      padding-top: 10px;
       border-top-right-radius: 15px;
       border-bottom-right-radius: 15px;
     }
@@ -111,6 +117,85 @@
       font-weight: 700;
     }
 
+    button:hover {
+      background-color: var(--btn-hover-color);
+    }
+
+    /* ---------- Mobile View ---------- */
+    @media (max-width: 375px) {
+
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      main {
+        flex-direction: column;
+        width: 300px;
+        height: 500px;
+        margin: 15px auto;
+      }
+
+      .image {
+        background-image: url("images/image-product-mobile.jpg");
+        width: 300px;
+        height: 220px;
+        background-repeat: no-repeat;
+        border-bottom-left-radius: 0px;
+        border-top-right-radius: 15px;
+      }
+
+      .right {
+        width: 300px;
+        border-top-right-radius: 0px;border-bottom-left-radius: 15px;
+      }
+
+      h3 {
+        font-size: 0.8em;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        color: var(--main-text-color);
+      }
+
+      h1 {
+        font-size: 1.6em;
+        font-family: var(--header-font-style);
+        font-weight: 700;
+        text-transform: capitalize;
+        color: var(--header-text-color);
+        margin-top: 0;
+      }
+
+      p, .original-price {
+        font-size: 0.7em;
+        font-family: var(--main-font-style);
+        font-weight: 600;
+        letter-spacing: 0.1em;
+        line-height: 1.6;
+        color: var(--main-text-color);
+        margin-top: 0.8em;
+      }
+
+      .prices {
+        margin: 15px 0;
+      }
+      
+      .discount-price {
+        font-size: 1.6em;
+      }
+
+      button {
+        font-size: 0.7em;
+        padding: 10px;
+      }
+
+      button:hover {
+        background-color: var(--btn-hover-color);
+      }
+
+    }
+
   </style>
 </head>
 <body>
@@ -119,7 +204,7 @@
 
     <!---------- Left ---------->
     <div class="left">
-      <img src="images/image-product-desktop.jpg" width="310" height="500" alt="A product of CHANEL">
+      <div class="image"></div>
     </div>
 
     <!---------- Right ---------->
@@ -128,8 +213,8 @@
       <div class="typo-position">
 
         <h3>perfume</h3>
-        <h1>gabrielle<br>essence eau<br>de parfum</h1>
-        <p>A floral, solar and voluptuous<br>interpretation composed by<br>Olivier Polge, Perfumer-Creator<br>for the House of CHANEL.</p>
+        <h1>gabrielle essence eau de parfum</h1>
+        <p>A floral, solar and voluptuous interpretation composed by Olivier Polge, Perfumer-Creator for the House of CHANEL.</p>
         <div class="prices">
           <div class="discount-price">$149.99</div>
           <div class="original-price"><s>$169.99</s></div>
