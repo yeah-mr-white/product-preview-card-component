@@ -33,10 +33,10 @@
       background-color: var(--container-bg-color);
     }
 
-    main {
+    .container {
       display: flex;
       width: 620px;
-      height: 500px;
+      height: 100%;
       margin: 50px auto;
       background-color: var(--white-colora);
     }
@@ -45,16 +45,15 @@
       background-image: url("images/image-product-desktop.jpg");
       background-size: 340px;
       width: 310px;
-      height: 500px;
+      height: 100%;
       border-top-left-radius: 15px;
       border-bottom-left-radius: 15px;
     }
 
     .right {
       width: 310px;
-      height: 500px;
+      height: 100%;
       background-color: var(--white-color);
-      padding-top: 10px;
       border-top-right-radius: 15px;
       border-bottom-right-radius: 15px;
     }
@@ -82,9 +81,10 @@
     }
 
     h3 {
-      font-weight: 700;
-      text-transform: uppercase;
+      font-family: var(--main-font-style);
+      font-size: 0.8em;
       letter-spacing: 0.3em;
+      text-transform: uppercase;
       color: var(--main-text-color);
     }
 
@@ -121,7 +121,76 @@
       background-color: var(--btn-hover-color);
     }
 
-    /* ---------- Mobile View ---------- */
+    @media (max-width: 622px) and (min-width: 376px) {
+
+      .container {
+        flex-direction: column;
+        width: 300px;
+        height: 500px;
+        margin: 15px auto;
+      }
+
+      .image {
+        background-image: url("images/image-product-mobile.jpg");
+        width: 300px;
+        height: 220px;
+        background-repeat: no-repeat;
+        border-bottom-left-radius: 0px;
+        border-top-right-radius: 15px;
+      }
+
+      .right {
+        width: 300px;
+        border-top-right-radius: 0px;border-bottom-left-radius: 15px;
+      }
+
+      h3 {
+        font-size: 0.8em;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        color: var(--main-text-color);
+      }
+
+      h1 {
+        font-size: 1.6em;
+        font-family: var(--header-font-style);
+        font-weight: 700;
+        text-transform: capitalize;
+        color: var(--header-text-color);
+        margin-top: 0;
+      }
+
+      p, .original-price {
+        font-size: 0.7em;
+        font-family: var(--main-font-style);
+        font-weight: 600;
+        letter-spacing: 0.1em;
+        line-height: 1.6;
+        color: var(--main-text-color);
+        margin-top: 0.8em;
+      }
+
+      .prices {
+        margin: 15px 0;
+      }
+      
+      .discount-price {
+        font-size: 1.6em;
+      }
+
+      button {
+        font-size: 0.7em;
+        padding: 10px;
+      }
+
+      button:hover {
+        background-color: var(--btn-hover-color);
+      }
+
+    }
+
+    /* Mobile View */
     @media (max-width: 375px) {
 
       * {
@@ -129,7 +198,7 @@
         padding: 0;
       }
 
-      main {
+      .container {
         flex-direction: column;
         width: 300px;
         height: 500px;
@@ -200,7 +269,7 @@
 </head>
 <body>
 
-  <main>
+  <main class="container">
 
     <!---------- Left ---------->
     <div class="left">
